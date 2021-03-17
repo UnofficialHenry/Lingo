@@ -1,4 +1,4 @@
-package jtm.web.Lingo;
+package jtm.web.Lingo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
