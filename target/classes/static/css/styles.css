@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+html, body {
+  margin: 0;
+}
+
+div {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ebca23;
+}
+
+.box:after {
+  content: ' ';
+  border-top: 100vh solid #d9d9d9;
+  border-right: 100vw solid transparent;
+  width: 0;
+  position: absolute;
+}
