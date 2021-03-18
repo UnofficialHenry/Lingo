@@ -14,8 +14,11 @@
 	<body>
  		<div class="background">
 			<div class="startButton">
-  				<input type="text" placeholder="Enter word here">
-  				<input class="submit-button-data" name="commit" type="submit" value="SUBMIT">
+			<p th:text="'word is: ' + ${word}"/><p><!-- just for debugging purpose -->
+				<form th:action="@{/game}">
+	  				<input type="text" placeholder="Enter word here" th:name="word"/>
+	  				<input class="submit-button-data" type="submit" value="SUBMIT">
+  				</form>
 			</div>
  		</div>
 	</body>	
