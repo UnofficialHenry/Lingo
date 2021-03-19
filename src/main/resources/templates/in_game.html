@@ -8,18 +8,30 @@
 
  		<title>Lingo Web App</title>
 
- 		<!-- CSS -->
+ 		<!-- CSS stylesheets -->
  		<link rel="stylesheet" href="/css/styles.css"/>
 	</head>
 	<body>
  		<div class="background">
 			<div class="startButton">
-			<p th:text="'word is: ' + ${word}"/><p><!-- just for debugging purpose -->
-				<form th:action="@{/game}">
-	  				<input type="text" placeholder="Enter word here" th:name="word"/>
-	  				<input class="submit-button-data" type="submit" value="SUBMIT">
-  				</form>
-			</div>
- 		</div>
+
+				<table class="no-spacing">
+				  	<tr>
+			    			<td id="row1-col1" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td id="row1-col2" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td id="row1-col3" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td id="row1-col4" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td id="row1-col5" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+			  		</tr>
+		  		</table>
+		  		
+		  		<p th:text="'word is: ' + ${word}"/><p> <!-- just for debugging purpose -->
+					<form th:action="@{/game}">
+	  					<input type="text" class="" placeholder="Enter word here" maxlength="5" th:name="word"/>
+	  					<input class="submitButton" type="submit" value="SUBMIT">
+  					</form>
+
+			</div> <!-- startButton -->
+ 		</div> <!-- background -->
 	</body>	
 </html>
