@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+.classpath
+.idea/**
+*.iml
+**/.~lock*
+*.log
+logs/**
+.metadata/**
+.project
+.settings/**
+target/**
+wbp-meta/**
