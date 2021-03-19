@@ -29,3 +29,34 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
+.button-brown {
+	background-color: #6b311c;
+	color: #000000;
+  	border: none;
+  	border-radius: 8px;
+  	padding: 7px 23px;
+  	text-align: center;
+  	display: inline-block;
+  	font-size: 30px;
+  	font-weight: bold;
+}
+
+.lingo-logo-start {
+  	text-align: center;
+  	display: block;
+  	width: 22%; /* auto */
+  	position: fixed;
+  	top: 28%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+.arrow-start {
+	display: block;
+  	width: auto;
+  	position: fixed;
+  	top: 40%;
+  	left: 38%;
+  	transform: translate(-50%, -50%);
+}
