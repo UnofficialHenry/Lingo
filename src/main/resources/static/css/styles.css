@@ -77,20 +77,18 @@ html, body {
     width: 50%;
 }
 
-
 table {
 	border: 7px solid #6b311c;
 	empty-cells: show;
+	position: absolute;
+	margin-left: auto; 
+  	margin-right: auto;
+  	top: 30%;
 }
 
 table.no-spacing {
-	border-spacing: 0; /* Removes the cell spacing via CSS */
-  	border-collapse: collapse; /* Optional - if you don't want to have double border where cells touch */
-}
-
-table.center{
-	margin-left: auto; 
-  	margin-right: auto;
+	border-spacing: 0;
+  	border-collapse: collapse;
 }
 
 td {
@@ -98,13 +96,23 @@ td {
 }
 
 .submitButton {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    align-items: center;
-    justify-content: center;
+        position: absolute;
+        top: 57%;
+        right: 47%;
+        z-index: 10;
+        align-items: center;
+	justify-content: center;
+	background-color: #6b311c;
+        color: #000000;
+  	border: none;
+  	border-radius: 8px;
+  	padding: 7px 20px;
+  	text-align: center;
+  	display: inline-block;
+  	font-size: 15px;
+  	font-weight: bold;
+}
+
+.input-area {
+	border-radius: 8px;
 }
