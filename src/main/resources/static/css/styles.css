@@ -19,7 +19,7 @@ html, body {
 }
 
 .startButton {
-	position: absolute;
+    position: absolute;
     display: flex;
     width: 100%;
     height: 100%;
@@ -31,8 +31,8 @@ html, body {
 }
 
 .button-brown {
-	background-color: #6b311c;
-	color: #000000;
+    background-color: #6b311c;
+    color: #000000;
   	border: none;
   	border-radius: 8px;
   	padding: 7px 23px;
@@ -62,9 +62,40 @@ html, body {
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
+
+table {
+	border: 7px solid #6b311c;
+	empty-cells: show;
+}
+
+table.no-spacing {
+	border-spacing: 0; /* Removes the cell spacing via CSS */
+  	border-collapse: collapse; /* Optional - if you don't want to have double border where cells touch */
+}
+
+table.center{
+	margin-left: auto; 
+  	margin-right: auto;
+}
+
+td {
+  	border: 2px solid black;
+}
+
+.submitButton {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+}
