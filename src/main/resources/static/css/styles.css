@@ -60,3 +60,11 @@ html, body {
   	left: 38%;
   	transform: translate(-50%, -50%);
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
