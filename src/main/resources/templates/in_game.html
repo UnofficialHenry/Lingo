@@ -13,13 +13,25 @@
 	</head>
 	<body>
  		<div class="background">
-			<div class="startButton">
-			<p th:text="'word is: ' + ${word}"/><p><!-- just for debugging purpose -->
+ 			
+			<div class="startButton center">
+			<p th:text="'word is: ' + ${word}"/><p> <!-- just for debugging purpose -->
 				<form th:action="@{/game}">
 	  				<input type="text" placeholder="Enter word here" th:name="word"/>
 	  				<input class="submit-button-data" type="submit" value="SUBMIT">
   				</form>
-			</div>
- 		</div>
+
+				<table class="no-spacing">
+		  			<tr>
+	    				<td id="row1-col1" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+	    				<td id="row1-col2" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+	    				<td id="row1-col3" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+	    				<td id="row1-col4" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+	    				<td id="row1-col5" bgcolor="#d9d9d9" style="line-height:50px; width:50px">&nbsp;</td>
+	  				</tr>
+  				</table>
+
+			</div> <!-- startButton -->
+ 		</div> <!-- background -->
 	</body>	
 </html>
