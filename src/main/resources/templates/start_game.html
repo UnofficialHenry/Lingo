@@ -10,11 +10,16 @@
 
  		<!-- CSS -->
  		<link rel="stylesheet" href="/css/styles.css"/>
+ 		
+ 		<!-- Bootstrap plugin can be deleted -->
+ 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	</head>
 	<body>
  		<div class="background">
  			<div class="startButton">
-      				<button type="button" th:onclick="|window.location.href='/game'|">START</button>
+      			<button type="button" class="button-brown" th:onclick="|window.location.href='/game'|">START</button>
+      			<img th:src="@{/images/lingo_logo.png}" alt="LINGO" class="lingo-logo-start"/>
+      			<img th:src="@{/images/arrow.png}" alt="arrow" class="arrow-start"/>
   			</div>
  		</div>
 	</body>	
