@@ -1,13 +1,36 @@
 package jtm.web.Lingo.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TestController {
-
-	@GetMapping
+	private GameLogic gamelogic = new GameLogic();
+	
+	
+	@GetMapping("/")
 	String startGame() {
 		return "start_game";
 	}
+	
+	@GetMapping("/game")
+	String inGame(@RequestParam(value="word",defaultValue = "     ",required = true)String word, Model model) {
+		String word1="abcde";
+		String[] colors= gamelogic.compare(word, word1);
+		model.addAttribute("word",word1);
+		for(int i =0; i<5;i++) {
+			model.addAttribute("classitem"+Integer.toString(i+1),colors[i]);//assigns color to cell
+			model.addAttribute("col"+Integer.toString(i+1),word.charAt(i));//assigns input letters to cell
+		}
+		return "in_game";
+	}
+	
+	@GetMapping("/end_game")
+	String endGame() {
+		return "end_game";
+	}
+
 }

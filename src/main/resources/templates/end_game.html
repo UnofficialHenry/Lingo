@@ -9,9 +9,19 @@
  		<title>Lingo Web App</title>
 
  		<!-- CSS -->
- 		<link rel="stylesheet" href="/css/styles.css"/>
+ 		<link rel="stylesheet" href="/css/styles.css"/> 		
 	</head>
 	<body>
- 		<h1>Hello World</h1>
+ 		<div class="background">
+ 		</div>
+	 			<img th:src="@{/images/lingo_logo.png}" class="lingo-logo-other"  alt="Logo"><br>
+	 			<img th:src="@{/images/game_ended.png}" style="width:55vw;height:15vh; position:fixed; left:38vh; top:9vw;" alt="Game Ended" class="center">
+	 			
+	 			<div style="font-family:abhaya libre regular; text-align: center; font-size:3vw; position:fixed; left:55vh; top:20vw;">
+					TOTAL POINTS: !!!<br>
+					<img th:src="@{/images/crown.png}" style="width:10vw;height:15vh;vertical-align:middle" alt="Crown">
+					<span style="font-size:2vw">HIGHSCORE: !!!</span><br>
+					<button type="button" th:onclick="|window.location.href='/game'|" class="button-brown" style="align:center; cursor:pointer;"><strong>RESTART</strong></button>
+				</div>			
 	</body>	
 </html>

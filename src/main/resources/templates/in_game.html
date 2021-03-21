@@ -8,10 +8,30 @@
 
  		<title>Lingo Web App</title>
 
- 		<!-- CSS -->
+ 		<!-- CSS stylesheets -->
  		<link rel="stylesheet" href="/css/styles.css"/>
 	</head>
 	<body>
- 		<h1>Hello World</h1>
+ 		<div class="background">
+			<div class="startButton">
+
+				<table class="no-spacing">
+				  	<tr>
+			    			<td th:text="${col1}" th:bgcolor="${classitem1}" id="row1-col1" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${col2}" th:bgcolor="${classitem2}" id="row1-col2" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${col3}" th:bgcolor="${classitem3}" id="row1-col3" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${col4}" th:bgcolor="${classitem4}" id="row1-col4" style="line-height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${col5}" th:bgcolor="${classitem5}" id="row1-col5" style="line-height:50px; width:50px">&nbsp;</td>
+			  		</tr>
+		  		</table>
+		  		
+		  		<p th:text="'word is: ' + ${word}"/><p> <!-- just for debugging purpose -->
+					<form th:action="@{/game}">
+	  					<input type="text" class="" placeholder="Enter word here" maxlength="5" th:name="word"/>
+	  					<input class="submitButton" type="submit" value="SUBMIT">
+  					</form>
+
+			</div> <!-- startButton -->
+ 		</div> <!-- background -->
 	</body>	
 </html>
