@@ -1,15 +1,22 @@
 package jtm.web.Lingo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Random;
+
 @Controller
 public class TestController {
 	private GameLogic gamelogic = new GameLogic();
-	
+
+	private String gameWord = null;
+
+	@Autowired
+	private RandWordUtil randWordUtil;
 	
 	@GetMapping("/")
 	String startGame() {
@@ -18,7 +25,10 @@ public class TestController {
 	
 	@GetMapping("/game")
 	String inGame(@RequestParam(value="word",defaultValue = "     ",required = true)String word, Model model) {
-		String word1="abcde";
+		if (gameWord == null)
+			gameWord = randWordUtil.getRandomWord();
+
+		String word1= gameWord;
 		String[] colors= gamelogic.compare(word, word1);
 		model.addAttribute("word",word1);
 		for(int i =0; i<5;i++) {
