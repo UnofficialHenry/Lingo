@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "SQLWords")
 public class Words {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer wordid;
 
     private String word;
@@ -38,7 +38,7 @@ public class Words {
 
     @Override
     public String toString() {
-        return "is:  "+wordid +
-                ", word='" + word + '\'';
+        return "id:  " + wordid +
+                ", word: " + word + '\'';
     }
 }
