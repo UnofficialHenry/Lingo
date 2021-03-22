@@ -8,10 +8,68 @@
 
  		<title>Lingo Web App</title>
 
- 		<!-- CSS -->
+ 		<!-- CSS stylesheet -->
  		<link rel="stylesheet" href="/css/styles.css"/>
 	</head>
 	<body>
- 		<h1>Hello World</h1>
+ 		<div class="background">
+			<div class="startButton">
+				<table class="no-spacing">
+				  	<tr>
+			    			<td th:text="${cell11}" th:bgcolor="${classitem11}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell12}" th:bgcolor="${classitem12}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell13}" th:bgcolor="${classitem13}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell14}" th:bgcolor="${classitem14}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell15}" th:bgcolor="${classitem15}" style="height:50px; width:50px">&nbsp;</td>
+			  		</tr>
+			  		<tr>
+			    			<td th:text="${cell21}" th:bgcolor="${classitem21}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell22}" th:bgcolor="${classitem22}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell23}" th:bgcolor="${classitem23}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell24}" th:bgcolor="${classitem24}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell25}" th:bgcolor="${classitem25}" style="height:50px; width:50px">&nbsp;</td>
+			  		</tr>
+			  		<tr>
+			    			<td th:text="${cell31}" th:bgcolor="${classitem31}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell32}" th:bgcolor="${classitem32}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell33}" th:bgcolor="${classitem33}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell34}" th:bgcolor="${classitem34}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell35}" th:bgcolor="${classitem35}" style="height:50px; width:50px">&nbsp;</td>
+			  		</tr>
+			  		<tr>
+			    			<td th:text="${cell41}" th:bgcolor="${classitem41}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell42}" th:bgcolor="${classitem42}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell43}" th:bgcolor="${classitem43}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell44}" th:bgcolor="${classitem44}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell45}" th:bgcolor="${classitem45}" style="height:50px; width:50px">&nbsp;</td>
+			  		</tr>
+			  		<tr>
+			    			<td th:text="${cell51}" th:bgcolor="${classitem51}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell52}" th:bgcolor="${classitem52}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell53}" th:bgcolor="${classitem53}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell54}" th:bgcolor="${classitem54}" style="height:50px; width:50px">&nbsp;</td>
+			    			<td th:text="${cell55}" th:bgcolor="${classitem55}" style="height:50px; width:50px">&nbsp;</td>
+			  		</tr>
+		  		</table>
+				
+				<img th:src="@{/images/lingo_logo.png}" alt="LINGO" class="lingo-logo-in-game"/>
+		  		<img th:src="@{/images/crown.png}" alt="Crown" class="crown-in-game"/>
+		  		
+		  		<p class="roundNr" th:text="'ROUND # ' + ${roundNumber}"/>
+		  		<p class="highscore-in-game" th:text="'HIGHSCORE: ' + ${highscore}"/>
+		  		<p class="total-points-in-game" th:text="'TOTAL POINTS: ' + ${totalPoints}"/>
+		  		
+		  		<p style="position: absolute; margin-top: 27%"  th:text="'word is: ' + ${word}"/><p> <!-- just for debugging purpose -->
+				<form th:action="@{/game}">
+					<input onkeypress="return /[a-z]/i.test(event.key)" pattern="(.){5,5}"
+					   oninput="this.value = this.value.toUpperCase()"
+					   oninvalid="this.setCustomValidity('Input should contain 5 letters')"
+					   onchange="try{setCustomValidity('')}catch(e){}"
+					   title="Input your guessed word: Should be 5 letters long"
+					   type="text" class="" placeholder="Enter word here" maxlength="5" th:name="word"/>
+	  				<input class="submitButton" type="submit" th:value="${submit}">
+  				</form>
+			</div>
+ 		</div>
 	</body>	
 </html>
