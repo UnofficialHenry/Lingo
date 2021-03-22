@@ -1,6 +1,5 @@
 package jtm.web.Lingo.controllers;
 
-
 import jtm.web.Lingo.model.Words;
 import jtm.web.Lingo.repository.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +19,6 @@ public class RandWordUtil {
         List<Words> words = repo.findAll();
         SecureRandom rand = new SecureRandom();
 
-        return words.get(rand.nextInt( words.size())).getWord();
+        return words.get(rand.nextInt(words.size())).getWord();
     }
 }

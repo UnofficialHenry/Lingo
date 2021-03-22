@@ -28,12 +28,12 @@ public class TestController {
 		if (gameWord == null)
 			gameWord = randWordUtil.getRandomWord();
 
-		String word1= gameWord;
-		String[] colors= gamelogic.compare(word, word1);
+		String word1 = gameWord;
+		String[] colors = gamelogic.compare(word, word1);
 		model.addAttribute("word",word1);
-		for(int i =0; i<5;i++) {
-			model.addAttribute("classitem"+Integer.toString(i+1),colors[i]);//assigns color to cell
-			model.addAttribute("col"+Integer.toString(i+1),word.charAt(i));//assigns input letters to cell
+		for(int i = 0; i < 5; i++) {
+			model.addAttribute("classitem"+Integer.toString(i + 1),colors[i]);//assigns color to cell
+			model.addAttribute("col"+Integer.toString(i + 1),word.charAt(i));//assigns input letters to cell
 		}
 		return "in_game";
 	}
