@@ -25,9 +25,13 @@
 			  		</tr>
 		  		</table>
 		  		
-		  		<p th:text="'word is: ' + ${word}"/><p> <!-- just for debugging purpose -->
+		  		<p th:text="'Word is: ' + ${word} + ' '"/><p> <!-- just for debugging purpose -->
 					<form th:action="@{/game}">
-	  					<input type="text" class="" placeholder="Enter word here" maxlength="5" th:name="word"/>
+	  					<input onkeypress="return /[a-z]/i.test(event.key)" pattern="(.){5,5}"
+							   oninvalid="this.setCustomValidity('Input should contain 5 letters')"
+							   onchange="try{setCustomValidity('')}catch(e){}"
+							   title="Input your guessed word: Should be 5 letters long"
+							   type="text" class="" placeholder="Enter word here" maxlength="5" th:name="word"/>
 	  					<input class="submitButton" type="submit" value="SUBMIT">
   					</form>
 
