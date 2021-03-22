@@ -28,6 +28,7 @@
 		  		<p th:text="'Word is: ' + ${word} + ' '"/><p> <!-- just for debugging purpose -->
 					<form th:action="@{/game}">
 	  					<input onkeypress="return /[a-z]/i.test(event.key)" pattern="(.){5,5}"
+							   oninput="this.value = this.value.toUpperCase()"
 							   oninvalid="this.setCustomValidity('Input should contain 5 letters')"
 							   onchange="try{setCustomValidity('')}catch(e){}"
 							   title="Input your guessed word: Should be 5 letters long"
