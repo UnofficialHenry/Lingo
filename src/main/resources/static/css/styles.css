@@ -98,6 +98,7 @@ table {
   	text-align: center;
   	font-family: Arial;
   	font-weight: bold;
+	text-transform: uppercase;
 }
 
 table.no-spacing {
