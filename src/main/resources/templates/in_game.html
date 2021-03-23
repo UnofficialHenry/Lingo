@@ -61,12 +61,14 @@
 		  		
 		  		<p style="position: absolute; margin-top: 27%"  th:text="'word is: ' + ${word}"/><p> <!-- just for debugging purpose -->
 				<form th:action="@{/game}">
-					<input onkeypress="return /[a-z]/i.test(event.key)" pattern="(.){5,5}"
-					   oninput="this.value = this.value.toUpperCase()"
-					   oninvalid="this.setCustomValidity('Input should contain 5 letters')"
-					   onchange="try{setCustomValidity('')}catch(e){}"
-					   title="Input your guessed word: Should be 5 letters long"
-					   type="text" class="" placeholder="Enter word here" maxlength="5" th:name="word"/>
+					<input
+						onkeypress="return /[a-z]/i.test(event.key)" pattern="(.){5,5}"
+						required minlength="5" maxlength="5"
+						oninput="this.value = this.value.toUpperCase()"
+						oninvalid="this.setCustomValidity('Input should contain 5 letters')"
+						onchange="try{setCustomValidity('')}catch(e){}"
+						title="Write down your guess: Should be 5 letters long"
+						type="text" class="" placeholder="Enter word here" th:name="word"/>
 	  				<input class="submitButton" type="submit" th:value="${submit}">
   				</form>
 			</div>
