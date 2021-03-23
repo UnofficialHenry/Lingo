@@ -20,7 +20,7 @@ public class TestController {
 	private int highScore=0;
 	private int[] levels = {100, 80, 60, 45, 30};
 	private String[] words= new String[6];
-	// private String[][] colorMatrix = new String[4] [4];
+	private String[][] colorMatrix = new String[6] [6];
 
 	@Autowired
 	private RandWordUtil randWordUtil;
@@ -44,14 +44,14 @@ public class TestController {
 		for(int i = 0; i < 5; i++) {
 			model.addAttribute("classitem"+Integer.toString(guessCount)+Integer.toString(i + 1),colors[i]);//assigns color to cell
 			model.addAttribute("cell"+Integer.toString(guessCount)+Integer.toString(i + 1),word.charAt(i));//assigns input letters to cell
-	//		colorMatrix [guessCount] [i] = colors [i];          // save colors [i] in matrix where [guessCount] is row nr and [i] colon nr
+			colorMatrix[guessCount][i]=colors[i];
 		}
 		words[guessCount]=word;
 		if(guessCount>0) {
 			for(int i=1;i<guessCount;i++) {
 				for(int j=0;j<5;j++) {
 					model.addAttribute("cell"+Integer.toString(guessCount-i)+Integer.toString(j + 1),words[guessCount-i].charAt(j));
-	//  			model.addAttribute("classitem"+Integer.toString(guessCount-i)+Integer.toString(j + 1), colorMatrix[guessCount-i] [j]);  // shows matrix colors to old guesses
+					model.addAttribute("classitem"+Integer.toString(guessCount-i)+Integer.toString(j + 1),colorMatrix[guessCount-i][j]); // shows matrix colors to old guesses
 				}
 			}
 		}
