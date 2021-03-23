@@ -94,6 +94,7 @@ table {
   	font-family: Arial;
   	font-weight: bold;
 	text-transform: uppercase;
+	background-color: #d9d9d9;
 }
 
 table.no-spacing {
