@@ -99,6 +99,7 @@ table {
 table.no-spacing {
 	border-spacing: 0;
   	border-collapse: collapse;
+  	background-color: #d9d9d9;
 }
 
 td {
