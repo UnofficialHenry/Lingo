@@ -60,7 +60,10 @@
 		  		<p class="total-points-in-game" th:text="'TOTAL POINTS: ' + ${totalPoints}"/>
 		  		
 		  		<!--  <p style="position: absolute; margin-top: 27%"  th:text="'word is: ' + ${word}"/><p> just for debugging purpose -->
-				<form th:action="@{/game}">
+				<form th:action="@{/game}" th:if="${test}">
+  					<input class="submitButton" type="submit" th:value="${submit}">
+  				</form>
+				<form th:action="@{/game}" th:unless="${test}">
 					<input
 						onkeypress="return /[a-z]/i.test(event.key)" pattern="(.){5,5}"
 						required minlength="5" maxlength="5"
@@ -71,6 +74,7 @@
 						type="text" class="input-area" placeholder="Enter word here" th:name="word"/>
 	  				<input class="submitButton" type="submit" th:value="${submit}">
   				</form>
+  				
 			</div>
  		</div>
 	</body>	

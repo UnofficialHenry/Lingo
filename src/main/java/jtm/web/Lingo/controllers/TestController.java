@@ -37,6 +37,7 @@ public class TestController {
 		model.addAttribute("roundNumber",roundCount);
 		model.addAttribute("totalPoints", pointCount);
 		model.addAttribute("highscore", highScore);
+		model.addAttribute("test",false);
 		
 		if (gameWord == null)
 			gameWord = randWordUtil.getRandomWord();
@@ -44,6 +45,7 @@ public class TestController {
 		model.addAttribute("rightword", gameWord.toUpperCase());
 		String[] colors = gamelogic.compare(word, word1);
 		model.addAttribute("word",word1);
+		
 		for(int i = 0; i < 5; i++) {
 			model.addAttribute("classitem"+Integer.toString(guessCount)+Integer.toString(i + 1),colors[i]);//assigns color to cell
 			model.addAttribute("cell"+Integer.toString(guessCount)+Integer.toString(i + 1),word.charAt(i));//assigns input letters to cell
@@ -68,10 +70,11 @@ public class TestController {
 			roundCount++;
 			words=new String[6];
 			model.addAttribute("submit","NEXT ROUND");
+			model.addAttribute("test",true);
 		}
 		if(guessCount>5) {
 			if (highScore < pointCount) {
-				highScore = pointCount;	
+				highScore = pointCount;
 			}
 			return endGame();
 		}
