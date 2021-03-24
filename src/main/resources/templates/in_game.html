@@ -14,7 +14,7 @@
 	<body>
  		<div class="background">
 			<div class="startButton">
-				<table class="no-spacing">
+				<table class="no-spacing" style="align:center;top:30%;">
 				  	<tr>
 			    			<td th:text="${cell11}" th:bgcolor="${classitem11}" style="height:50px; width:50px">&nbsp;</td>
 			    			<td th:text="${cell12}" th:bgcolor="${classitem12}" style="height:50px; width:50px">&nbsp;</td>
@@ -59,7 +59,7 @@
 		  		<p class="highscore-in-game" th:text="'HIGHSCORE: ' + ${highscore}"/>
 		  		<p class="total-points-in-game" th:text="'TOTAL POINTS: ' + ${totalPoints}"/>
 		  		
-		  		<p style="position: absolute; margin-top: 27%"  th:text="'word is: ' + ${word}"/><p> <!-- just for debugging purpose -->
+		  		<!--  <p style="position: absolute; margin-top: 27%"  th:text="'word is: ' + ${word}"/><p> just for debugging purpose -->
 				<form th:action="@{/game}">
 					<input
 						onkeypress="return /[a-z]/i.test(event.key)" pattern="(.){5,5}"
@@ -68,7 +68,7 @@
 						oninvalid="this.setCustomValidity('Input should contain 5 letters')"
 						onchange="try{setCustomValidity('')}catch(e){}"
 						title="Write down your guess: Should be 5 letters long"
-						type="text" class="" placeholder="Enter word here" th:name="word"/>
+						type="text" class="input-area" placeholder="Enter word here" th:name="word"/>
 	  				<input class="submitButton" type="submit" th:value="${submit}">
   				</form>
 			</div>

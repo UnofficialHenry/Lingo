@@ -85,10 +85,9 @@ html, body {
 table {
 	border: 7px solid #6b311c;
 	empty-cells: show;
-	position: absolute;
+	position: fixed;
 	margin-left: auto; 
   	margin-right: auto;
-  	top: 10%;
 	font-size: 250%;
   	text-align: center;
   	font-family: Arial;
@@ -183,11 +182,20 @@ td {
 	height: 12%;
 }
 
+.rightword-end-game {
+	position: absolute;
+	font-family: abhaya libre regular;
+	font-size: 150%;
+	top: 28%;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
 .total-points-end-game {
 	position: absolute;
 	font-family: abhaya libre regular;
 	font-size: 150%;
-	top: 30%;
+	top: 35%;
 	margin-left: auto;
   	margin-right: auto;
 }
@@ -196,7 +204,7 @@ td {
 	position: absolute;
 	font-family: abhaya libre regular;
 	font-size: 150%;
-	top: 40%;
+	top: 42%;
 	margin-left: auto;
   	margin-right: auto;
 }
