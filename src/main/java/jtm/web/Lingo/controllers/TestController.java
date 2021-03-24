@@ -27,6 +27,11 @@ public class TestController {
 	
 	@GetMapping("/")
 	String startGame() {
+		guessCount=0;
+		roundCount=1;
+		gameWord=null;
+		pointCount= 0;
+		words=new String[6];
 		return "start_game";
 	}
 	
@@ -75,6 +80,7 @@ public class TestController {
 		if(guessCount>5) {
 			if (highScore < pointCount) {
 				highScore = pointCount;
+				model.addAttribute("highscore", highScore);
 			}
 			return endGame();
 		}
