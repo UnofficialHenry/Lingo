@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- Thymeleaf Namespace -->
+<html xmlns:th="https://www.thymeleaf.org">
+	<head>
+		<!-- Required meta tags -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 		<title>Lingo Web App</title>
+
+ 		<!-- CSS -->
+ 		<link rel="stylesheet" href="/css/styles.css"/> 		
+	</head>
+	<body>
+ 		<div class="background">
+ 			<div class="startButton">
+ 				<img th:src="@{/images/game_ended.png}" class="end-logo" alt="Game Ended">
+	 			<img th:src="@{/images/lingo_logo.png}" class="lingo-logo-other"  alt="Logo">
+	 			<img th:src="@{/images/crown.png}" alt="Crown" class="crown-end-game"/>
+	 			
+	 			<p class="rightword-end-game" th:text="'RIGHT WORD IS: ' + ${rightword}"/>
+		  		<p class="highscore-end-game" th:text="'HIGHSCORE: ' + ${highscore}"/>
+		  		<p class="total-points-end-game" th:text="'TOTAL POINTS: ' + ${totalPoints}"/>
+		  		<button type="button" class="button-brown-end" th:onclick="|window.location.href='/game'|">RESTART</button>
+			</div>
+		</div>
+	</body>	
+</html>
