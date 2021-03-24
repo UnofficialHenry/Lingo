@@ -18,6 +18,7 @@ public class TestController {
 	private int roundCount=1;
 	private int pointCount=0;
 	private int highScore=0;
+	private String rightWord;
 	private int[] levels = {100, 80, 60, 45, 30};
 	private String[] words= new String[6];
 	private String[][] colorMatrix = new String[6] [6];
@@ -30,15 +31,19 @@ public class TestController {
 		return "start_game";
 	}
 	
+	
 	@GetMapping("/game")
 	String inGame(@RequestParam(value="word",defaultValue = "     ",required = true)String word, Model model) {
 		model.addAttribute("submit","SUBMIT");
 		model.addAttribute("roundNumber",roundCount);
 		model.addAttribute("totalPoints", pointCount);
 		model.addAttribute("highscore", highScore);
+		model.addAttribute("rightword", rightWord);
+	
 		if (gameWord == null)
 			gameWord = randWordUtil.getRandomWord();
 		String word1 = gameWord;
+		rightWord = word1.toUpperCase();
 		String[] colors = gamelogic.compare(word, word1);
 		model.addAttribute("word",word1);
 		for(int i = 0; i < 5; i++) {
@@ -69,7 +74,7 @@ public class TestController {
 		}
 		if(guessCount>5) {
 			if (highScore < pointCount) {
-				highScore = pointCount;
+				highScore = pointCount;			
 			}
 			return endGame();
 		}
