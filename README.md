@@ -31,7 +31,7 @@
 #### Error solution
 
 In case of getting Maven issues:
-- delete `.m2/repository` folder in File Manager
+- Delete `.m2/repository` folder in File Manager
 
 In case of Maven options not being found in Eclipse:
 - Right click on Lingo project
