@@ -16,7 +16,7 @@
 - `mvn clean compile eclipse:clean eclipse:eclipse`
 
 ### To create an executable jar file:
-Right-click on the project Lingo -> Run As -> Maven Build -> Click Run
+Right-click on the project Lingo -> Run As -> 5 Maven Build.. -> Click Run
 
 ### To run the executable jar file using command line:
 - `cd workspace/Lingo/target`
