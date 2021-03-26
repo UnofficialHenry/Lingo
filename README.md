@@ -11,6 +11,10 @@
 
 ## Developer Guide
 
+### After cloning the project from GitHub in the project directory enerate project meta-info:
+- `cd workspace/Lingo/`
+- `mvn clean compile eclipse:clean eclipse:eclipse`
+
 ### To create an executable jar file:
 Right-click on the project Lingo -> Run As -> Maven Build -> Click Run
 
