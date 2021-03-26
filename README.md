@@ -16,26 +16,26 @@
 - `mvn clean compile eclipse:clean eclipse:eclipse`
 
 ### To create an executable jar file:
-- Click ´Project´ menu item
-- Choose ´Clean...´
-- Select ´Lingo´ and press ´Clean´
+- Click `Project` menu item
+- Choose `Clean...`
+- Select `Lingo` and press `Clean`
 - Right click on Lingo project
-- Choose ´Maven´ -> ´Update Project...´
+- Choose `Maven` -> `Update Project...`
 - Right click on Lingo project
-- Choose ´Run As´ -> ´Maven build...´
+- Choose `Run As` -> `Maven build...`
 - In the popup window
-  - Provide Goal ´mvn clean install´
-  - Select checkbox for ´Skip Tests´
-  - Click ´Apply´ and ´Run´
+  - Provide Goal `mvn clean install`
+  - Select checkbox for `Skip Tests`
+  - Click `Apply` and `Run`
 
 #### Error solution
 
 In case of getting Maven issues:
-- delete ´.m2/repository´ folder in File Manager
+- delete `.m2/repository` folder in File Manager
 
 In case of Maven options not being found in Eclipse:
 - Right click on Lingo project
-- Choose ´Configure´ -> ´Convert to Maven project´
+- Choose `Configure` -> `Convert to Maven project`
 
 ### To run the executable jar file using command line:
 - `cd workspace/Lingo/target`
